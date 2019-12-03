@@ -6,7 +6,9 @@ Docker安裝與使用
 
 1開啟終端機
 2輸入下面指令安裝 Docker：
+    
     sudo sh -c "$(curl -fsSL https://get.docker.com)"
+    
     sudo usermod -aG docker danny
     
     說明：
