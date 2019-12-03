@@ -1,10 +1,10 @@
-# Docker
-Docker安裝與使用
+# Docker安裝與使用
 
 # 安裝
 環境：ubuntu 18.04
 
 1開啟終端機
+ 
 2輸入下面指令安裝 Docker：
     
     sudo sh -c "$(curl -fsSL https://get.docker.com)"
