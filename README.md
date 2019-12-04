@@ -1,6 +1,6 @@
-# Docker安裝與使用
+# Docker安裝與使用Docker執行Tensorflow
 
-# 安裝
+# 安裝Docker
 環境：ubuntu 18.04
 
 1開啟終端機
@@ -40,8 +40,60 @@
 
 會出現系統資訊畫面，包括CPU數，記憶體大小以及目前有的docker映像檔數等等
 
+也可以輸入：
 
+     docker
+
+會列出docker指令表     
+
+
+# 安裝Nvdia-docker 
+
+環境：Linux(EX： ubuntu 18.04）、Nvidia 顯卡
+
+Docker是在GPU上運行TensorFlow的最簡單方法，因為主機只需安裝NVIDIA®驅動程序（無需安裝NVIDIA® CUDA®工具包）。
+
+1.檢查GPU 是否可用，輸入：
+
+    lspci | grep -i nvidia
+    
+2.安裝nvidia-docker、啟動支持NVIDIA® GPU的Docker容器。依序輸入下列數行指令：
+
+    distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+    curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+    curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+    sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
+    sudo systemctl restart docker
+    
+測試是否成功輸入：
+
+    docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
     
     
+    
+# 下載TensorFlow Docker 映像 
+
+    docker pull tensorflow/tensorflow                     
+    docker pull tensorflow/tensorflow:devel-gpu          
+    docker pull tensorflow/tensorflow:latest-gpu-jupyter 
+以上三行指令分別為：# latest stable release ， # nightly dev release w/ GPU support  ， # latest release w/ GPU support and Jupyter
+
+
+使用Docker執行Tensorflow-GPU    
+    
+3.下載並運行支持GPU 的TensorFlow 映像（需要幾分鐘的時間），輸入下列二行：
+
+    docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu \
+    python -c "import tensorflow as tf; tf.enable_eager_execution(); print(tf.reduce_sum(tf.random_normal([1000, 1000])))"
+    
+    
+    docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu \
+   python -c "import tensorflow as tf; tf.enable_eager_execution(); print(tf.reduce_sum(tf.random_normal([1000, 1000])))"
    
+   docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu \
+   python -c "import tensorflow as tf; print(tf.reduce_sum(tf.random_normal([1000, 1000])))"
 
+使用Docker執行Tensorflow-GPU
+
+列出本機的所有 image 文件。
+docker image ls
