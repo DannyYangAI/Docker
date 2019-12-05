@@ -71,23 +71,32 @@ Docker是在GPU上運行TensorFlow的最簡單方法，因為主機只需安裝N
     
     docker pull tensorflow/tensorflow:1.13.1-gpu-jupyter
     
-# 下載TensorFlow Docker 映像 
-
+# 下載TensorFlow Docker 映像  （可跳過）
+參考：https://www.tensorflow.org/install/docker
+範例指令：
     docker pull tensorflow/tensorflow                     
     docker pull tensorflow/tensorflow:devel-gpu          
     docker pull tensorflow/tensorflow:latest-gpu-jupyter 
 以上三行指令分別為：# latest stable release ， # nightly dev release w/ GPU support  ， # latest release w/ GPU support and Jupyter
 
-    docker pull tensorflow/tensorflow:1.13.1-gpu-jupyter-py3
- [重要]下載tensorflow指定1.13.1版，指定gpu版本，指定有jupyter, 指定為python3(否則是2.7)
+我們採用下面下載指令：
 
-    docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu-py3
- 以上指令才會用py3, 否則是2.7
- 
+    docker pull tensorflow/tensorflow:1.13.1-gpu-py3-jupyter
+指令說明：下載tensorflow指定1.13.1版，指定gpu版本，指定有jupyter, 指定為python3(否則是2.7)
+
+    
 使用Docker執行Tensorflow-GPU    
     
-3.下載並運行支持GPU 的TensorFlow 映像（需要幾分鐘的時間），輸入下列二行：
-
+# 下載並運行支持GPU 的TensorFlow 映像（需要幾分鐘的時間），輸入下列二行：
+若沒有執行上面的「下載TensorFlow Docker 映像」，直接打下面這行指令也可以，能同時下載與執行
+注意下面指令有同時引入Nvdia-docker 
+    
+    docker pull tensorflow/tensorflow:1.13.1-gpu-py3
+    
+    
+    docker run --gpus all nvidia/cuda:9.0-base --rm -it  tensorflow/tensorflow:1.13.1-gpu-jupyter-py3 
+    
+    
     docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu \
     python -c "import tensorflow as tf; tf.enable_eager_execution(); print(tf.reduce_sum(tf.random_normal([1000, 1000])))"
     
@@ -103,6 +112,13 @@ Docker是在GPU上運行TensorFlow的最簡單方法，因為主機只需安裝N
 列出本機的所有 image 文件。
 docker image ls
 
+如果確認是跑完就不再使用的，可以在執行時加上 --rm 參數，當容器終止時會自動刪除，很方便
+跟容器互動，可以加上 -it
+
 
 docker pull tensorflow/tensorflow:1.13.1-gpu-jupyter
-sudo systemctl hibernate
+
+Hibernate 模式，將記憶體內容寫入硬碟後完全關閉電源，等同 Windows 的休眠模式。
+     
+     sudo systemctl hibernate
+
