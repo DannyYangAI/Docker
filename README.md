@@ -93,7 +93,7 @@ Docker是在GPU上運行TensorFlow的最簡單方法，因為主機只需安裝N
     
     docker pull tensorflow/tensorflow:1.13.1-gpu-py3
     
-    
+     docker run --gpus all --rm -it  tensorflow/tensorflow:1.13.1-gpu-py3-jupyter
     docker run --gpus all nvidia/cuda:9.0-base --rm -it  tensorflow/tensorflow:1.13.1-gpu-jupyter-py3 
     
     
@@ -121,4 +121,68 @@ docker pull tensorflow/tensorflow:1.13.1-gpu-jupyter
 Hibernate 模式，將記憶體內容寫入硬碟後完全關閉電源，等同 Windows 的休眠模式。
      
      sudo systemctl hibernate
+     
+     
+     docker ps -a
+     
+     
+     29
+
+If you want to cleanup docker images and containers
+
+CAUTION: this will flush everything
+
+stop all containers
+
+docker stop $(docker ps -a -q)
+
+remove all containers
+
+docker rm $(docker ps -a -q)
+
+remove all images
+
+docker rmi -f $(docker images -a -q)
+
+=======================================no use 
+
+裝 ubuntu
+docker pull ubuntu
+
+啟動它
+docker run -it ubuntu
+
+
+保存 docker 的狀態的話
+
+先用下面的指令查看一下它的版本號
+
+1
+docker ps -l
+docker ps -a   =>>all
+
+list all contantor
+docker ps -a
+
+
+上面這個指令可以幫助你取得 ID
+
+然後就可以使用下面的指令把變動 commit 上去了
+
+docker commit [ID] [CONTAINER] [REPOSITORY[:TAG]]
+
+一個使用實例大概看起來像這樣
+
+1
+docker commit XXX any-name/ubuntu
+
+docker start c372268f2810
+
+
+run containtor 
+docker exec -i -t c372268f2810 bash
+
+
+
+     
 
