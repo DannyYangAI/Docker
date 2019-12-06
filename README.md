@@ -191,6 +191,19 @@ ubuntu 支援 CUDA10, 不支援CUDA 9
 網友：tensorflow 1.13.1需要cudnn版本7.4.1。更新您的cudnn，它將起作用。
      
 
+
+ps - 顯示容器清單
+首先是 ps，列出目前執行中的容器。雖然沒有明確說明，猜想是 linux 的 ps 指令，也就是 process status
+
+docker ps
+如果想要看到全部，包含已停止的，加上 -a 參數，代表 all 全部
+
+docker ps -a
+如果有照著之前執行過 hello-world，就會發現他出現在清單上，而且是 Exit 狀態。
+
+
+
+
 ======================開始一步一步建containtor內容======================
 
 apt-get update
@@ -198,5 +211,10 @@ apt-get install python3.6
 
 
 
+====================================================================
+docker pull nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04
 
+docker run --gpus all nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04 nvidia-smi
+ docker run --gpus all --rm -it  tensorflow/tensorflow:1.13.1-gpu-py3
 
+docker run --gpus all -it --rm tensorflow/tensorflow:1.13.1-gpu-py3 \
