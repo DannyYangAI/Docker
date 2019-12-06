@@ -229,3 +229,22 @@ Copy all files to folder inside container:
 
 docker cp ./src/build/. ContainerName:/app/
 above example shows all files inside build folder are copying to app folder inside container
+
+//linux 的object detection api 路徑設定
+export PYTHONPATH="${PYTHONPATH}:/home/siquare01/project/ObjectDetection/models:/home/siquare01/project/ObjectDetection/models/research:/home/siquare01/project/ObjectDetection/models/research/slim"
+
+
+//安裝包
+pip install pillow
+pip install lxml 
+pip install Cython
+pip install contextlib2
+pip install jupyter
+pip install matplotlib
+pip install pandas
+pip install opencv-python
+
+
+
+
+
