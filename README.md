@@ -218,3 +218,6 @@ docker run --gpus all nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04 nvidia-smi
  docker run --gpus all --rm -it  tensorflow/tensorflow:1.13.1-gpu-py3
 
 docker run --gpus all -it --rm tensorflow/tensorflow:1.13.1-gpu-py3 \
+
+
+docker run --gpus all -it --rm tensorflow/tensorflow:1.13.1-gpu-py3 bash
