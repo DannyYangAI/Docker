@@ -126,7 +126,10 @@ Hibernate 模式，將記憶體內容寫入硬碟後完全關閉電源，等同 
      docker ps -a
      
      
-     29
+Remove:
+
+    docker rmi Image
+
 
 If you want to cleanup docker images and containers
 
@@ -183,6 +186,17 @@ run containtor
 docker exec -i -t c372268f2810 bash
 
 
-
+記錄：
+ubuntu 支援 CUDA10, 不支援CUDA 9
+網友：tensorflow 1.13.1需要cudnn版本7.4.1。更新您的cudnn，它將起作用。
      
+
+======================開始一步一步建containtor內容======================
+
+apt-get update
+apt-get install python3.6
+
+
+
+
 
