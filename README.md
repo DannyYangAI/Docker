@@ -221,3 +221,11 @@ docker run --gpus all -it --rm tensorflow/tensorflow:1.13.1-gpu-py3 \
 
 
 docker run --gpus all -it --rm tensorflow/tensorflow:1.13.1-gpu-py3 bash
+
+
+
+// 拷貝資料夾到容器中
+Copy all files to folder inside container:
+
+docker cp ./src/build/. ContainerName:/app/
+above example shows all files inside build folder are copying to app folder inside container
