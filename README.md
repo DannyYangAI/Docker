@@ -248,3 +248,6 @@ pip install opencv-python
 任意切換tensorflow 版本（自動反安裝舊版加安裝新的版）
 pip install --upgrade tensorflow-gpu==1.8.0
 
+
+docker build -t cuda9ubuntu18 .
+
