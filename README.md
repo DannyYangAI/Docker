@@ -267,3 +267,11 @@ Username: $oauthtoken
 Password: amc2bXZlbGFsMHR1YjlxNzFrbjZkdDFkZG46N2RlMWVjNmEtMmNlZi00MGU0LWFiMWEtMTViMWZhMjZlYzJh
 上面那串金龠若失效要重新取得，從NGC網站Setup -> API Key
 docker pull nvcr.io/nvidia/tensorflow:19.11-tf2-py3
+
+執行image:
+
+docker run --gpus all -it --rm -v /home:/home nvcr.io/nvidia/tensorflow:19.11-tf2-py3
+
+第一個/home是實際電腦中/home，第二個/home是 containtor  中/home
+
+
