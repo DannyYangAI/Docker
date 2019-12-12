@@ -250,4 +250,4 @@ pip install --upgrade tensorflow-gpu==1.8.0
 
 
 docker build -t cuda9ubuntu18 .
-
+DannyXXXX!
