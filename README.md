@@ -135,17 +135,17 @@ If you want to cleanup docker images and containers
 
 CAUTION: this will flush everything
 
-stop all containers
+停止全部containers指令：stop all containers
 
-docker stop $(docker ps -a -q)
+    docker stop $(docker ps -a -q)
 
-remove all containers
+刪除全部containers指令： remove all containers
 
-docker rm $(docker ps -a -q)
+    docker rm $(docker ps -a -q)
 
-remove all images
+刪除全部image 指令：remove all images
 
-docker rmi -f $(docker images -a -q)
+    docker rmi -f $(docker images -a -q)
 
 =======================================no use 
 
@@ -251,6 +251,8 @@ pip install --upgrade tensorflow-gpu==1.8.0
 
 docker build -t cuda9ubuntu18 .
 DannyXXXX!
+檢查tensorflow板本 ：
+python3 -c 'import tensorflow as tf; print(tf.__version__)'
 
 =====================試使用NVDIA NGC==================================
 推薦各位使用Docker + NVIDIA Docker
