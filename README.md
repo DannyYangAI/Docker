@@ -276,4 +276,6 @@ docker run --gpus all -it --rm -v /home:/home nvcr.io/nvidia/tensorflow:19.11-tf
 
 第一個/home是實際電腦中/home，第二個/home是 containtor  中/home
 
+舊版如下：docker pull nvcr.io/nvidia/tensorflow:19.06-py3
+
 
