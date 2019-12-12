@@ -251,3 +251,19 @@ pip install --upgrade tensorflow-gpu==1.8.0
 
 docker build -t cuda9ubuntu18 .
 DannyXXXX!
+
+=====================試使用NVDIA NGC==================================
+推薦各位使用Docker + NVIDIA Docker
+其實沒有那麼複雜，只要Linux OS和GPU Driver安裝完成之後把Docker裝起來就可以跑了
+Docker image來源可以使用NVIDIA GPU Cloud(免費註冊)，主流的那幾個Framework都有提供，每個月都會定期更新，針對GPU計算做最佳化
+https://ngc.nvidia.com/catalog/containers?query=&quickFilter=deep-learning&filters=&orderBy=
+
+要先註冊： 超級mmi DannyXXXX!
+安裝CLI https://ngc.nvidia.com/setup/installers/cli
+下指令 
+ngc config set
+docker login nvcr.io
+Username: $oauthtoken
+Password: amc2bXZlbGFsMHR1YjlxNzFrbjZkdDFkZG46N2RlMWVjNmEtMmNlZi00MGU0LWFiMWEtMTViMWZhMjZlYzJh
+上面那串金龠若失效要重新取得，從NGC網站Setup -> API Key
+docker pull nvcr.io/nvidia/tensorflow:19.11-tf2-py3
