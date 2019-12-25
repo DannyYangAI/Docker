@@ -272,7 +272,7 @@ https://ngc.nvidia.com/catalog/containers?query=&quickFilter=deep-learning&filte
     ngc config set
     docker login nvcr.io
     Username: $oauthtoken
-    Password: amc2bXZlbGFsMHR1YjlxNzFrbjZkdDFkZG46N2RlMWVjNmEtMmNlZi00MGU0LWFiMWEtMTViMWZhMjZlYzJh
+    Password: amc2bXZlbGFsMHR1YjlxNzFrbjZkdDFkZG46ODZlZTkyMzUtZjY5Mi00M2U4LTgxMWItMWNjMjFhMzE4ODUw
     
 上面那串金龠若失效要重新取得，從NGC網站Setup -> API Key
 
