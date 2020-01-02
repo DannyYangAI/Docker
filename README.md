@@ -257,6 +257,15 @@ DannyXXXX!
 
 python3 -c 'import tensorflow as tf; print(tf.__version__)'
 
+# 檢查cuda 版本
+
+    nvcc  --version
+    
+# 檢查cudnn 版本
+
+    cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
+ 
+
 =====================試使用NVDIA NGC==================================
 推薦各位使用Docker + NVIDIA Docker
 其實沒有那麼複雜，只要Linux OS和GPU Driver安裝完成之後把Docker裝起來就可以跑了
