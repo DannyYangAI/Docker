@@ -264,9 +264,10 @@ python3 -c 'import tensorflow as tf; print(tf.__version__)'
 # 檢查cudnn 版本
 
     cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
- 
 
-=====================試使用NVDIA NGC==================================
+# 使用NVDIA NGC 下載容器
+
+=======================================================
 推薦各位使用Docker + NVIDIA Docker
 其實沒有那麼複雜，只要Linux OS和GPU Driver安裝完成之後把Docker裝起來就可以跑了
 Docker image來源可以使用NVIDIA GPU Cloud(免費註冊)，主流的那幾個Framework都有提供，每個月都會定期更新，針對GPU計算做最佳化
