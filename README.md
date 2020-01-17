@@ -288,11 +288,11 @@ https://ngc.nvidia.com/catalog/containers?query=&quickFilter=deep-learning&filte
 
 NCG帳密：fXXXXXXXX@  ,   DannyXXXX!
 
-docker pull nvcr.io/nvidia/tensorflow:19.11-tf2-py3
+docker pull nvcr.io/nvidia/tensorflow:19.11-tf1-py3
 
 執行image:
 
-docker run --gpus all -it --rm -v /home:/home nvcr.io/nvidia/tensorflow:19.11-tf2-py3
+docker run --gpus all -it --rm -v /home:/home nvcr.io/nvidia/tensorflow:19.11-tf1-py3
 
 第一個/home是實際電腦中/home，第二個/home是 containtor  中/home
 
