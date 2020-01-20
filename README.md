@@ -299,3 +299,11 @@ docker run --gpus all -it --rm -v /home:/home nvcr.io/nvidia/tensorflow:19.11-tf
 舊版如下：docker pull nvcr.io/nvidia/tensorflow:19.06-py3
 
 
+
+
+=====================uninstall nvidia driver===============================
+sudo apt-get remove --purge nvidia*
+
+
+
+
