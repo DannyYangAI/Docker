@@ -1,4 +1,4 @@
-(完整說明) https://glints.com/tw/blog/docker-basic-tutorial/ 
+
 
 # Docker安裝與使用Docker執行Tensorflow
 
