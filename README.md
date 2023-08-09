@@ -1,8 +1,10 @@
 
-
 # Docker安裝與使用Docker執行Tensorflow
 
 # 安裝Docker
+
+@@@@@@@@@@@@@@@@@@(完整說明) https://glints.com/tw/blog/docker-basic-tutorial/ 
+
 環境：ubuntu 18.04
 
 1開啟終端機
